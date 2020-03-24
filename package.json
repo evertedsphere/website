@@ -7,6 +7,7 @@
   "license": "CC-BY-NC-SA-4.0",
   "private": false,
   "dependencies": {
-    "tailwind-starter-kit": "https://github.com/creativetimofficial/tailwind-starter-kit"
+    "tailwind-starter-kit": "https://github.com/creativetimofficial/tailwind-starter-kit",
+    "tailwindcss": "^1.2.0"
   }
 }

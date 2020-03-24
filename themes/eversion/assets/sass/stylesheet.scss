@@ -1,6 +1,6 @@
+@import "../../../../node_modules/tailwindcss/tailwind.css";
 // https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms/
-
-a:hover {
+a: hover {
   text-decoration: underline;
 }
 
@@ -8,14 +8,18 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+.actual-content h1 {
+  @extend .text-sm !optional;
+}
+
 .post-leader-section {
   position: relative;
   z-index: 1;
-  
+
   &:before,
   &:after {
     background: inherit;
-    content: '';
+    content: "";
     display: block;
     height: 50%;
     left: 0;
@@ -30,7 +34,7 @@ a:hover {
     transform: skewY(1.5deg);
     transform-origin: 100% 0;
   }
-  
+
   &:after {
     bottom: 0;
     transform: skewY(-1.5deg);
