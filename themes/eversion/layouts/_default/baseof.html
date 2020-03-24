@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ $css.Permalink }}" />
     <title>{{ .Page.Title }} &mdash; {{ .Site.Title }}</title>
   </head>
-  <body class="text-gray-400 antialiased">
+  <body class="text-gray-400 antialiased viewport">
     <nav class="relative bg-gray-900 py-1">
       <div class="container mx-auto">
         <div
@@ -44,42 +44,40 @@
       </div>
     </nav>
 
-    <main class="viewport text-lg">
-      <section
-        class="pt-6 md:pt-10 md:pb-6 relative block bg-gray-800 leader-section even-section"
-      >
-        <div class="container mx-auto pb-6 md:pb-20 px-4">
-          <div class="flex flex-wrap md:justify-between">
-            <div class="w-full md:w-7/12">
-              {{- block "leader" . }}
-              {{ end }}
-            </div>
-            <div class="invisible md:visible md:w-5/12 px-10">
-              {{- block "leader-sidebar" . }}
-              {{ end }}
-            </div>
+    <section
+      class="pt-6 md:pt-10 md:pb-6 relative block bg-gray-800 leader-section even-section"
+    >
+      <div class="container mx-auto pb-6 md:pb-20 px-4">
+        <div class="flex flex-wrap md:justify-between">
+          <div class="w-full md:w-7/12">
+            {{- block "leader" . }}
+            {{ end }}
+          </div>
+          <div class="invisible md:visible md:w-5/12 px-10">
+            {{- block "leader-sidebar" . }}
+            {{ end }}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section
-        class="relative block bg-gray-900 post-leader-section
-        odd-section pb-6 pt-6 md:pb-8 md:pt-8 fill-viewport"
-      >
-        <div class="container mx-auto px-4">
-          <div class="flex flex-wrap md:justify-between">
-            <div class="w-full md:w-7/12 actual-content">
-              {{- block "main" . }}
-              {{ end }}
-            </div>
-            <div class="invisible md:visible md:w-5/12 px-10">
-              {{- block "main-sidebar" . }}
-              {{ end }}
-            </div>
+    <section
+      class="relative block bg-gray-900 post-leader-section
+      odd-section pb-6 pt-6 md:pb-8 md:pt-8 fill-viewport"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap md:justify-between">
+          <div class="w-full md:w-7/12 actual-content">
+            {{- block "main" . }}
+            {{ end }}
+          </div>
+          <div class="invisible md:visible md:w-5/12 px-10">
+            {{- block "main-sidebar" . }}
+            {{ end }}
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <footer class="relative bg-gray-800 text-gray-500 pt-6 md:pt-10 pb-6">
       <div class="pt-6 md:pt-10 container mx-auto px-4">
@@ -105,10 +103,4 @@
       </div>
     </footer>
   </body>
-  <script>
-    function toggleNavbar(collapseID) {
-      document.getElementById(collapseID).classList.toggle("hidden");
-      document.getElementById(collapseID).classList.toggle("block");
-    }
-  </script>
 </html>

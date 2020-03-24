@@ -3,3 +3,6 @@ languageCode = "en-us"
 title = "Mesocosmos"
 
 assetDir = "assets"
+
+[markup.goldmark.renderer]
+unsafe= true

@@ -1,15 +1,21 @@
-@import "../../../../node_modules/tailwindcss/tailwind.css";
-// https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms/
-a: hover {
+a:hover {
   text-decoration: underline;
 }
 
-.actual-content p {
-  margin-bottom: 1rem;
-}
+.actual-content {
+  & p {
+    margin-bottom: 1rem;
+  }
 
-.actual-content h1 {
-  @extend .text-sm !optional;
+  & h2 {
+    font-size: 2.25rem;
+  }
+  & h3 {
+    font-size: 1.875rem;
+  }
+  & h4 {
+    font-size: 1.5rem;
+  }
 }
 
 .post-leader-section {
@@ -43,12 +49,16 @@ a: hover {
 }
 
 // TODO fix this
-// .viewport {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100vh;
-// }
 
-// .fill-viewport {
-//   flex-grow: 1;
-// }
+.viewport {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.fill-viewport {
+  flex-grow: 1;
+}
+
+// todo compile ourselves!
+
