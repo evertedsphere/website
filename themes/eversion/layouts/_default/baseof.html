@@ -14,191 +14,92 @@
       rel="stylesheet"
       f="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    {{ $scss := resources.Get "sass/stylesheet.scss" }} 
-    
-    {{ $css := $scss | resources.ToCSS }}
+    <!-- <link -->
+    <!--   rel="stylesheet" -->
+    <!--   href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" -->
+    <!-- /> -->
     <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
     />
 
+    {{ $css := resources.Get "sass/stylesheet.scss" | resources.ToCSS }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" />
     <title>{{ .Page.Title }} &mdash; {{ .Site.Title }}</title>
   </head>
-  <body class="text-gray-800 antialiased">
-    <main>
-      <section class="pb-20 relative block bg-gray-800">
-        <div class="container mx-auto px-4 pt-24 pb-24">
-          <div class="flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-white">
-                From constraints, flourishing.
-              </h2>
-              <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-400">
-                I'm Soham Chowdhury, a functional programmer interested in
-                compilers, programming-language theory, and expressive type
-                systems, and an enthusiast for unexplained analogies in and
-                around mathematics, physics, and computer science.
-              </p>
+  <body class="text-gray-400 antialiased">
+    <nav class="relative bg-gray-900 py-1">
+      <div class="container mx-auto">
+        <div
+          class="flex flex-wrap items-center md:justify-between justify-center"
+        >
+          <div class="w-full md:w-5/12 mx-auto text-center">
+            <div class="text-xl text-gray-600 font-semibold py-1">
+              <a href="{{ .Site.BaseURL }}">
+                {{ .Site.Title | lower }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-              <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-400">
-                This is my personal site and blog.
-              </p>
+    <main class="viewport text-lg">
+      <section
+        class="pt-6 md:pt-10 md:pb-6 relative block bg-gray-800 leader-section even-section"
+      >
+        <div class="container mx-auto pb-6 md:pb-20 px-4">
+          <div class="flex flex-wrap md:justify-between">
+            <div class="w-full md:w-7/12">
+              {{- block "leader" . }}
+              {{ end }}
+            </div>
+            <div class="invisible md:visible md:w-5/12 px-10">
+              {{- block "leader-sidebar" . }}
+              {{ end }}
             </div>
           </div>
         </div>
       </section>
 
-      <section class="pt-20 pb-20 relative block bg-gray-900 header-section">
+      <section
+        class="relative block bg-gray-900 post-leader-section
+        odd-section pb-6 pt-6 md:pb-8 md:pt-8 fill-viewport"
+      >
         <div class="container mx-auto px-4">
-          <div class="flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-white">Writing</h2>
-              <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-                I'm a published author, with one book to my name, and also
-                occasionally put out an article or two on this website.
-                Frequently recurring topics in my writing include this, that,
-                and the Other.
-              </p>
-              <ul>
-                {{ range .Site.RegularPages }}
-                <li class="mt-4 mb-4 text-gray-500">
-                  <p class="text-2xl font-semibold text-white">
-                    <a href="{{.Permalink}}">
-                      {{ .Title }}
-                    </a>
-                  </p>
-                </li>
-                {{ end }}
-              </ul>
+          <div class="flex flex-wrap md:justify-between">
+            <div class="w-full md:w-7/12 actual-content">
+              {{- block "main" . }}
+              {{ end }}
+            </div>
+            <div class="invisible md:visible md:w-5/12 px-10">
+              {{- block "main-sidebar" . }}
+              {{ end }}
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="relative bg-gray-300 pt-8 pb-6">
-      <div class="pt-20 container mx-auto px-4">
+    <footer class="relative bg-gray-800 text-gray-500 pt-6 md:pt-10 pb-6">
+      <div class="pt-6 md:pt-10 container mx-auto px-4">
         <div class="flex flex-wrap">
-          <div class="w-full lg:w-6/12 px-4">
-            <h4 class="text-3xl font-semibold">{{ .Site.Title }}</h4>
-            <h5 class="text-lg mt-0 mb-2 text-gray-700">
-              Made with org-mode, Tailwind CSS, and Hugo.
-            </h5>
-            <div class="mt-6">
-              <button
-                class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i class="fab fa-twitter"></i></button
-              ><button
-                class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i class="fab fa-facebook-square"></i></button
-              ><button
-                class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i class="fab fa-dribbble"></i></button
-              ><button
-                class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i class="fab fa-github"></i>
-              </button>
-            </div>
+          <div class="w-full md:w-7/12">
+            <p class="text-lg">
+              View the <a
+                         href="https://github.com/evertedspheres/website"
+                         class="underline">source</a>
+              for this website.
+            </p>
+            <p class="text-sm">
+              The current version of {{ .Site.Title }} was built from commit 
+              {{ .GitInfo.AbbreviatedHash }} on 
+              {{ .GitInfo.AuthorDate.Format "March 2, 2006" }}.
+            </p>
           </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="flex flex-wrap items-top mb-6">
-              <div class="w-full lg:w-4/12 px-4 ml-auto">
-                <span class="block text-gray-600 text-sm font-semibold mb-2"
-                  >Useful Links</span
-                >
-                <ul class="list-unstyled">
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/presentation"
-                      >About Us</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://blog.creative-tim.com"
-                      >Blog</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://www.github.com/creativetimofficial"
-                      >Github</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/bootstrap-themes/free"
-                      >Free Products</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="w-full lg:w-4/12 px-4">
-                <span
-                  class="block uppercase text-gray-600 text-sm font-semibold mb-2"
-                  >Other Resources</span
-                >
-                <ul class="list-unstyled">
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
-                      >MIT License</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/terms"
-                      >Terms &amp; Conditions</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/privacy"
-                      >Privacy Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/contact-us"
-                      >Contact Us</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="my-6 border-gray-400" />
-        <div
-          class="flex flex-wrap items-center md:justify-between justify-center"
-        >
-          <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div class="text-sm text-gray-600 font-semibold py-1">
-              Copyright © 2019 Tailwind Starter Kit by
-              <a
-                href="https://www.creative-tim.com"
-                class="text-gray-600 hover:text-gray-900"
-                >Creative Tim</a
-              >.
-            </div>
+          <div class="invisible md:visible md:w-5/12 px-10">
+            {{- block "footer-sidebar" . }}
+            {{ end }}
           </div>
         </div>
       </div>

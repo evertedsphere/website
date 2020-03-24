@@ -1,18 +1,39 @@
-{{ define "main" }}
-    <main aria-role="main">
-      <header class="homepage-header">
-        <h1>{{.Title}}</h1>
-        {{ with .Params.subtitle }}
-        <span class="subtitle">{{.}}</span>
-        {{ end }}
-      </header>
-      <div class="homepage-content">
-        {{.Content}}
-      </div>
-      <div>
-        {{ range first 10 .Site.RegularPages }}
-            {{ .Render "summary"}}
-        {{ end }}
-      </div>
-    </main>
+{{ define "leader" }}
+<h1 class="text-4xl font-semibold mb-4 text-white">
+  From constraints, flourishing.
+</h1>
+<p class="text-lg leading-relaxed mb-4 text-gray-400">
+  I'm Soham Chowdhury, a functional programmer interested in
+  compilers, programming-language theory, and expressive type
+  systems, and an enthusiast for unexplained analogies in and
+  around mathematics, physics, and computer science.
+</p>
+
+<p class="text-lg leading-relaxed text-gray-400">
+  This is my personal site and blog.
+</p>
 {{ end }}
+
+{{ define "main" }}
+<h2 class="text-4xl font-semibold text-white">Writing</h2>
+<p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
+Nunc lacus velit, eleifend nec lobortis et, rutrum at ante. Curabitur hendrerit iaculis tincidunt. Nullam sed arcu nulla. Curabitur massa nunc, ultrices eu vulputate at, varius et ipsum. Praesent accumsan, purus mollis vestibulum imperdiet, lorem tellus commodo est, ac pretium urna nibh eu metus. Ut commodo eros at orci pretium ullamcorper. Pellentesque eget tincidunt augue. Suspendisse in porta augue. Integer ultricies, felis eget eleifend imperdiet, est tortor congue ligula, ac convallis mi metus nec nisi. Aenean pretium quam quam, ut malesuada ligula vehicula vitae. Sed pellentesque cursus lectus, a pellentesque orci tincidunt vitae. Duis vulputate, leo eu vestibulum porttitor, enim dolor porta arcu, a vulputate odio sapien quis lectus. Nullam sed iaculis sapien. Sed lobortis placerat eros nec tempus.
+</p>
+<h3 class="text-2xl font-semibold">Recent articles</h3>
+<ul>
+  {{ range .Site.RegularPages }}
+  <li class="mt-2 mb-2 text-gray-500">
+    <h4 class="text-xl font-semibold">
+      <a href="{{.Permalink}}">
+        {{ .Title }}
+      </a>
+    </h4>
+    <p class="text-md">
+      {{ .Summary }}
+    </p>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+
+

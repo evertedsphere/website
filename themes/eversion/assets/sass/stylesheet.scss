@@ -1,6 +1,14 @@
 // https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms/
 
-.header-section {
+a:hover {
+  text-decoration: underline;
+}
+
+.actual-content p {
+  margin-bottom: 1rem;
+}
+
+.post-leader-section {
   position: relative;
   z-index: 1;
   
@@ -19,13 +27,24 @@
 
   &:before {
     top: 0;
-    transform: skewY(1.8deg);
+    transform: skewY(1.5deg);
     transform-origin: 100% 0;
   }
   
   &:after {
     bottom: 0;
-    transform: skewY(-2.5deg);
+    transform: skewY(-1.5deg);
     transform-origin: 100%;
   }
 }
+
+// TODO fix this
+// .viewport {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100vh;
+// }
+
+// .fill-viewport {
+//   flex-grow: 1;
+// }

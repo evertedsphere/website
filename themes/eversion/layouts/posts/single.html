@@ -1,0 +1,71 @@
+{{ define "leader" }}
+
+<div class="block">
+{{ with .PrevInSection }}
+<span class="mr-1 pr-1 italic">
+previous
+</span>
+<a
+  href='{{.Permalink}}'
+  class="m-1 p-1 font-semibold"
+>{{ .Title }}</a>
+{{ end }}
+</div>
+
+<h1 id="title" class="text-4xl pt-2 pb-6 font-semibold">{{ .Title }}</h1>
+
+<aside class="meta">
+
+<div class="block">
+<span class="italic mr-1 pr-1 semibold">
+published
+</span>
+<span class="m-1 p-1 font-semibold">
+{{ .Date.Format "Mon Jan 2, 2006" }}
+</span>
+</div>
+
+<div class="block">
+{{ with .NextInSection }}
+<span class="mr-1 pr-1 italic">
+followed by
+</span>
+<a
+  href='{{.Permalink}}'
+  class="m-1 p-1 font-semibold"
+>{{ .Title }}</a>
+{{ end }}
+</div>
+
+</aside>
+{{ end }}
+
+{{ define "main" }}
+<article id="content">
+  {{ .Content }}
+</article>
+{{ end }}
+
+{{ define "main-sidebar" }}
+Sidebar content.
+{{ end }}
+
+{{ define "leader-sidebar" }}
+
+<div class="block">
+{{ with .Params.tags }}
+<div class="flex flex-column flex-wrap">
+<span class="m-1 p-1 italic rounded">
+tagged
+</span>
+{{ range . }}
+<a
+  href='{{ "tags" | absURL }}{{ . | urlize }}'
+  class="m-1 p-1 font-semibold bg-indigo-600 rounded text-gray-900"
+>{{ . }}</a>
+{{ end }}
+</div>
+{{ end }}
+<div>
+
+{{ end }}
