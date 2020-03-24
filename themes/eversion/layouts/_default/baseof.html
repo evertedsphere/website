@@ -83,16 +83,13 @@
       <div class="pt-6 md:pt-10 container mx-auto px-4">
         <div class="flex flex-wrap">
           <div class="w-full md:w-7/12">
-            <p class="text-lg">
-              View the <a
-                         href="https://github.com/evertedspheres/website"
-                         class="underline">source</a>
-              for this website.
-            </p>
-            <p class="text-sm">
-              The current version of {{ .Site.Title }} was built from commit 
-              {{ .GitInfo.AbbreviatedHash }} on 
-              {{ .GitInfo.AuthorDate.Format "March 2, 2006" }}.
+            <p class="text-md">
+              built using org-roam, tailwind, and hugo
+              &middot;
+              commit {{ .GitInfo.AbbreviatedHash }}
+              &middot;
+              view <a href="https://github.com/evertedspheres/website"
+                class="underline">source</a>
             </p>
           </div>
           <div class="invisible md:visible md:w-5/12 px-10">

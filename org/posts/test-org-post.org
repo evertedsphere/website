@@ -4,3 +4,4 @@
 * Foo
 ** Bar
 *** Baz
+[[file:another-org-post.org][Another Org Post]]
