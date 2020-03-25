@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/evertedsphere/website.git",
+  "author": "Soham 'evertedsphere' Chowdhury",
+  "license": "CC-BY-NC-SA-4.0",
+  "private": false,
+  "dependencies": {
+    "tailwind-starter-kit": "https://github.com/creativetimofficial/tailwind-starter-kit",
+    "tailwindcss": "^1.2.0"
+  }
+}

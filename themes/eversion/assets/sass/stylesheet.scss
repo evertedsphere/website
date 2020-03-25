@@ -1,0 +1,108 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+.text-gray-850 {
+  color: #242C3A;
+}
+
+.bg-gray-825 {
+  background-color: #283141;
+}
+.bg-gray-850 {
+  background-color: #242C3A;
+}
+.bg-gray-875 {
+  background-color: #1F2633;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.actual-content {
+  & p {
+    margin-bottom: 1rem;
+  }
+
+  & h2 {
+    font-size: 2.25rem;
+  }
+  & h3 {
+    font-size: 1.875rem;
+  }
+  & h4 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 640px) {
+.leader-section {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    background: inherit;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; // for Chrome Windows
+  }
+
+  &:before {
+    top: 0;
+    transform: skewY(1.75deg);
+    transform-origin: 100%;
+  }
+}
+
+.post-leader-section {
+  position: relative;
+  z-index: 1;
+
+  &:before,
+  &:after {
+    background: inherit;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; // for Chrome Windows
+  }
+
+  &:before {
+    top: 0;
+    transform: skewY(1.75deg);
+    transform-origin: 100%;
+  }
+
+  &:after {
+    bottom: 0;
+    transform: skewY(-1.75deg);
+    transform-origin: 100%;
+  }
+}
+}
+
+// TODO fix this
+
+.viewport {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.fill-viewport {
+  flex-grow: 1;
+}
+
+// todo compile ourselves!
+

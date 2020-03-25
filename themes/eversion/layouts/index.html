@@ -1,0 +1,36 @@
+{{ define "leader" }}
+<h1 class="text-4xl font-bold mb-4 text-gray-400">
+  Hi, I'm Soham.
+</h1>
+<p class="text-lg leading-relaxed text-gray-400 mb-4">
+  I work as a functional programmer and enjoy thinking about expressive type
+  systems, programming language design, and the development of compilers and
+  theorem provers.
+</p>
+<p class="text-lg leading-relaxed text-gray-400">
+  (You might also know me by the handle <code>@evertedsphere</code> or,
+  previously, <code>@mrkgnao</code>.) 
+</p>
+{{ end }}
+
+{{ define "main" }}
+<header class="text-4xl font-bold text-gray-400">Writing</header>
+<p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
+Most of my longer-form writing appears on this website.
+</p>
+<header class="text-3xl font-bold mb-4">Recent articles</header>
+<div class="flex md:block flex-row flex-wrap -mx-3 -my-1 md:-my-1">
+  {{ range .Site.RegularPages }}
+  <div class="text-gray-500 mx-3 my-1 md:my-2">
+    <div class="text-xl font-bold">
+      <a href="{{.Permalink}}">
+        {{ .Title }}
+      </a>
+    </div>
+    {{ .Date.Format "Jan 2, 2006" }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+

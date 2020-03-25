@@ -1,0 +1,9 @@
+baseURL = "https://evertedsphere.com"
+languageCode = "en-us"
+title = "Mesocosmos"
+theme = "eversion"
+
+assetDir = "assets"
+
+[markup.goldmark.renderer]
+unsafe= true

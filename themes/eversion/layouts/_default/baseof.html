@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      f="./assets/img/apple-icon.png"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      f="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link -->
+    <!--   rel="stylesheet" -->
+    <!--   href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" -->
+    <!-- /> -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    {{ if .Site.IsServer }}
+    {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
+    {{ $styles := resources.Get "sass/stylesheet.scss" | toCSS $cssOpts }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    {{ else }}
+    {{ $cssOpts := (dict "targetPath" "styles/main.css" ) }}
+    {{ $styles := resources.Get "sass/stylesheet.scss" | toCSS $cssOpts | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    {{ end }}
+
+    <title>{{ .Page.Title }} &mdash; {{ .Site.Title }}</title>
+  </head>
+  <body class="text-gray-400 antialiased viewport">
+    <nav class="relative bg-gray-900
+                pt-2 md:pt-4 lg:pt-4 xl:pt-4 
+                pb-2 sm:pb-10 md:pb-10 lg:pb-12 xl:pb-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap 
+          justify-around md:justify-around lg:justify-around xl:justify-around">
+          <div class="w-4/12 md:w-7/12 lg:w-7/12 xl:w-7/12 text-xl
+                        font-bold self-center py-1"/>
+            <a href='{{ .Site.BaseURL }}'>
+              {{ .Site.Title }}
+            </a>
+          </div>
+          <div class="w-1/12 md:w-1/12 lg:w-1/12 xl:w-1/12">
+          </div>
+          <div class="w-7/12 md:w-4/12 lg:w-4/12 xl:w-4/12">
+            <!--
+            <input class="bg-gray-900 appearance-none border-b-2
+                          border-gray-700 w-full my-2 px-2 text-lg
+                          text-gray-400 leading-tight focus:outline-none
+                          focus:border-indigo-500"
+                   id="inline-full-name" type="text" value="" 
+                   placeholder="enter search">
+            -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="relative block bg-gray-800 leader-section even-section 
+              pt-4 sm:pt-2 md:pt-2 lg:pt-0 xl:pt-0 
+              pb-5 sm:pb-16 md:pb-16 lg:pb-24 xl:pb-24"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap md:justify-around lg:justify-around xl:justify-around">
+          <div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12">
+            {{- block "leader" . }}
+            {{ end }}
+          </div>
+          <div class="hidden md:block lg:block xl:block 
+            md:w-1/12 lg:w-1/12 xl:w-1/12">
+          </div>
+          <div class="hidden md:block lg:block xl:block md:w-4/12 lg:w-4/12 xl:w-4/12 px-10">
+            {{- block "leader-sidebar" . }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative block bg-gray-900 post-leader-section
+      odd-section fill-viewport
+      pt-5 sm:pt-5 md:pt-5 lg:pt-5 xl:pt-5 
+      pb-5 sm:pt-5 md:pb-5 lg:pb-5 xl:pb-5">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap md:justify-around lg:justify-around xl:justify-around">
+          <div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 actual-content">
+            {{- block "main" . }}
+            {{ end }}
+          </div>
+          <div class="hidden md:block lg:block xl:block 
+            md:w-1/12 lg:w-1/12 xl:w-1/12">
+          </div>
+          <div class="hidden md:block lg:block xl:block md:w-4/12 lg:w-4/12 xl:w-4/12 px-10">
+            {{- block "main-sidebar" . }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="relative bg-gray-800 text-gray-500
+                    pt-5 sm:pt-10 md:pt-16 lg:pt-16 xl:pt-20
+                    pb-5 sm:pb-6 md:pb-6 lg:pb-6 xl:pb-6">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap 
+                     md:justify-around lg:justify-around xl:justify-around">
+          <div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12">
+            <p class="text-md">
+              <a href="https://github.com/evertedspheres/website"
+                 class="underline hover:text-indigo-400">Built</a> using org-roam in Doom Emacs.
+               Licensed <a
+                 href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                 class="underline hover:text-indigo-400">CC-BY-NC-SA
+                 4.0</a>.
+            </p>
+          </div>
+          <div class="hidden md:block lg:block xl:block 
+            md:w-1/12 lg:w-1/12 xl:w-1/12">
+          </div>
+          <div class="hidden md:block lg:block xl:block md:w-4/12 lg:w-4/12 xl:w-4/12 px-10">
+            {{- block "footer-sidebar" . }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
