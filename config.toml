@@ -1,4 +1,4 @@
-baseURL = "http://0.0.0.0:8000"
+baseURL = "https://gifted-stonebraker-01ccf8.netlify.com"
 languageCode = "en-us"
 title = "Mesocosmos"
 
