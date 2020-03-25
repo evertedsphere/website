@@ -44,7 +44,6 @@ a:hover {
 
   &:before {
     background: inherit;
-    border-top: 2px black;
     content: "";
     display: block;
     height: 50%;
@@ -58,7 +57,7 @@ a:hover {
   &:before {
     top: 0;
     transform: skewY(1.75deg);
-    transform-origin: 100% 0;
+    transform-origin: 100%;
   }
 }
 
@@ -82,7 +81,7 @@ a:hover {
   &:before {
     top: 0;
     transform: skewY(1.75deg);
-    transform-origin: 100% 0;
+    transform-origin: 100%;
   }
 
   &:after {
