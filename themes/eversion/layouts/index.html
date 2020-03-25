@@ -1,39 +1,36 @@
 {{ define "leader" }}
-<h1 class="text-4xl font-semibold mb-4 text-white">
-  From constraints, flourishing.
+<h1 class="text-4xl font-bold mb-4 text-gray-400">
+  Hi, I'm Soham.
 </h1>
-<p class="text-lg leading-relaxed mb-4 text-gray-400">
-  I'm Soham Chowdhury, a functional programmer interested in
-  compilers, programming-language theory, and expressive type
-  systems, and an enthusiast for unexplained analogies in and
-  around mathematics, physics, and computer science.
+<p class="text-lg leading-relaxed text-gray-400 mb-4">
+  I work as a functional programmer and enjoy thinking about expressive type
+  systems, programming language design, and the development of compilers and
+  theorem provers.
 </p>
-
 <p class="text-lg leading-relaxed text-gray-400">
-  This is my personal site and blog.
+  (You might also know me by the handle <code>@evertedsphere</code> or,
+  previously, <code>@mrkgnao</code>.) 
 </p>
 {{ end }}
 
 {{ define "main" }}
-<h2 class="text-4xl font-semibold text-white">Writing</h2>
+<header class="text-4xl font-bold text-gray-400">Writing</header>
 <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-Nunc lacus velit, eleifend nec lobortis et, rutrum at ante. Curabitur hendrerit iaculis tincidunt. Nullam sed arcu nulla. Curabitur massa nunc, ultrices eu vulputate at, varius et ipsum. Praesent accumsan, purus mollis vestibulum imperdiet, lorem tellus commodo est, ac pretium urna nibh eu metus. Ut commodo eros at orci pretium ullamcorper. Pellentesque eget tincidunt augue. Suspendisse in porta augue. Integer ultricies, felis eget eleifend imperdiet, est tortor congue ligula, ac convallis mi metus nec nisi. Aenean pretium quam quam, ut malesuada ligula vehicula vitae. Sed pellentesque cursus lectus, a pellentesque orci tincidunt vitae. Duis vulputate, leo eu vestibulum porttitor, enim dolor porta arcu, a vulputate odio sapien quis lectus. Nullam sed iaculis sapien. Sed lobortis placerat eros nec tempus.
+Most of my longer-form writing appears on this website.
 </p>
-<h3 class="text-2xl font-semibold">Recent articles</h3>
-<ul>
+<header class="text-3xl font-bold mb-4">Recent articles</header>
+<div class="flex md:block flex-row flex-wrap -mx-3 -my-1 md:-my-1">
   {{ range .Site.RegularPages }}
-  <li class="mt-2 mb-2 text-gray-500">
-    <h4 class="text-xl font-semibold">
+  <div class="text-gray-500 mx-3 my-1 md:my-2">
+    <div class="text-xl font-bold">
       <a href="{{.Permalink}}">
         {{ .Title }}
       </a>
-    </h4>
-    <p class="text-md">
-      {{ .Summary }}
-    </p>
-  </li>
+    </div>
+    {{ .Date.Format "Jan 2, 2006" }}
+  </div>
   {{ end }}
-</ul>
+</div>
 {{ end }}
 
 

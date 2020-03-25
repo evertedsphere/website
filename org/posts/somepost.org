@@ -1,5 +1,0 @@
-#+TITLE: Somepost
-#+HUGO_BASE_DIR: ~/code/website
-
-* Hrm.
-foo bar baz [[file:another-org-post.org][Another Org Post]] [[file:test-org-post.org][asdf]]

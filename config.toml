@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "http://0.0.0.0:8000"
 languageCode = "en-us"
 title = "Mesocosmos"
 

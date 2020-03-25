@@ -1,3 +1,22 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+.text-gray-850 {
+  color: #242C3A;
+}
+
+.bg-gray-825 {
+  background-color: #283141;
+}
+.bg-gray-850 {
+  background-color: #242C3A;
+}
+.bg-gray-875 {
+  background-color: #1F2633;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -14,7 +33,32 @@ a:hover {
     font-size: 1.875rem;
   }
   & h4 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 640px) {
+.leader-section {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    background: inherit;
+    border-top: 2px black;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; // for Chrome Windows
+  }
+
+  &:before {
+    top: 0;
+    transform: skewY(1.75deg);
+    transform-origin: 100% 0;
   }
 }
 
@@ -37,15 +81,16 @@ a:hover {
 
   &:before {
     top: 0;
-    transform: skewY(1.5deg);
+    transform: skewY(1.75deg);
     transform-origin: 100% 0;
   }
 
   &:after {
     bottom: 0;
-    transform: skewY(-1.5deg);
+    transform: skewY(-1.75deg);
     transform-origin: 100%;
   }
+}
 }
 
 // TODO fix this

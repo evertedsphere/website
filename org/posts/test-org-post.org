@@ -1,7 +1,0 @@
-#+TITLE: Test Org Post
-#+HUGO_BASE_DIR: ~/code/website
-
-* Foo
-** Bar
-*** Baz
-[[file:another-org-post.org][Another Org Post]]

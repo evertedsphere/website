@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/</loc>
+    <lastmod>2020-03-25T14:02:39+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/quasicompact-post/</loc>
+    <lastmod>2020-03-25T14:02:39+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/smooth-post/</loc>
+    <lastmod>2020-03-25T14:02:30+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/normal-post/</loc>
+    <lastmod>2020-03-25T14:02:21+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/regular-post/</loc>
+    <lastmod>2020-03-25T14:02:16+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/excellent-post/</loc>
+    <lastmod>2020-03-25T03:22:06+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/posts/example-post/</loc>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/</loc>
+    <lastmod>2020-03-24T18:56:25+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://0.0.0.0:8000/tags/</loc>
+  </url>
+  
+</urlset>

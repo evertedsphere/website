@@ -7,12 +7,12 @@ previous
 </span>
 <a
   href='{{.Permalink}}'
-  class="m-1 p-1 font-semibold"
+  class="m-1 p-1 font-bold"
 >{{ .Title }}</a>
 {{ end }}
 </div>
 
-<h1 id="title" class="text-4xl pt-2 pb-6 font-semibold">{{ .Title }}</h1>
+<h1 id="title" class="text-4xl pt-2 pb-6 font-bold">{{ .Title }}</h1>
 
 <aside class="meta">
 
@@ -20,7 +20,7 @@ previous
 <span class="italic mr-1 pr-1 semibold">
 published
 </span>
-<span class="m-1 p-1 font-semibold">
+<span class="m-1 p-1 font-bold">
 {{ .Date.Format "Mon Jan 2, 2006" }}
 </span>
 </div>
@@ -32,7 +32,7 @@ followed by
 </span>
 <a
   href='{{.Permalink}}'
-  class="m-1 p-1 font-semibold"
+  class="m-1 p-1 font-bold"
 >{{ .Title }}</a>
 {{ end }}
 </div>
@@ -61,7 +61,7 @@ tagged
 {{ range . }}
 <a
   href='{{ "tags" | absURL }}{{ . | urlize }}'
-  class="m-1 p-1 font-semibold bg-indigo-600 rounded text-gray-900"
+  class="m-1 p-1 font-bold bg-indigo-600 rounded text-gray-900"
 >{{ . }}</a>
 {{ end }}
 </div>

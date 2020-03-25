@@ -1,4 +1,0 @@
-#+TITLE: Another Org Post
-#+HUGO_BASE_DIR: ~/code/website
-
-* Kekw

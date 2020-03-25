@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mesocosmos</title>
+    <link>http://0.0.0.0:8000/posts/</link>
+    <description>Recent content in Posts on Mesocosmos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Mar 2020 14:02:39 +0530</lastBuildDate>
+    
+	<atom:link href="http://0.0.0.0:8000/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quasicompact Post</title>
+      <link>http://0.0.0.0:8000/posts/quasicompact-post/</link>
+      <pubDate>Wed, 25 Mar 2020 14:02:39 +0530</pubDate>
+      
+      <guid>http://0.0.0.0:8000/posts/quasicompact-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smooth Post</title>
+      <link>http://0.0.0.0:8000/posts/smooth-post/</link>
+      <pubDate>Wed, 25 Mar 2020 14:02:30 +0530</pubDate>
+      
+      <guid>http://0.0.0.0:8000/posts/smooth-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Normal Post</title>
+      <link>http://0.0.0.0:8000/posts/normal-post/</link>
+      <pubDate>Wed, 25 Mar 2020 14:02:21 +0530</pubDate>
+      
+      <guid>http://0.0.0.0:8000/posts/normal-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Post</title>
+      <link>http://0.0.0.0:8000/posts/regular-post/</link>
+      <pubDate>Wed, 25 Mar 2020 14:02:16 +0530</pubDate>
+      
+      <guid>http://0.0.0.0:8000/posts/regular-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Excellent Post</title>
+      <link>http://0.0.0.0:8000/posts/excellent-post/</link>
+      <pubDate>Wed, 25 Mar 2020 03:22:06 +0530</pubDate>
+      
+      <guid>http://0.0.0.0:8000/posts/excellent-post/</guid>
+      <description>Some other stuff.</description>
+    </item>
+    
+    <item>
+      <title>Example post</title>
+      <link>http://0.0.0.0:8000/posts/example-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://0.0.0.0:8000/posts/example-post/</guid>
+      <description>This is an example post.</description>
+    </item>
+    
+  </channel>
+</rss>
