@@ -1,0 +1,15 @@
+#+TITLE: Haskell example
+#+HUGO_BASE_DIR: ../../
+#+HUGO_SECTION: posts
+
+#+BEGIN_SRC haskell :exports both :results code
+f :: Int -> Int
+f x = x * x
+
+f 2
+#+END_SRC
+
+#+RESULTS:
+#+begin_src haskell
+4
+#+end_src

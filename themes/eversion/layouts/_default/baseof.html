@@ -1,4 +1,4 @@
-<!-- -*- engine:go -*- -->
+{{/* -*- engine: go -*- */}}
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,17 +22,14 @@
     <!--   rel="stylesheet" -->
     <!--   href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" -->
     <!-- /> -->
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet" />
 
     {{ if .Site.IsServer }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
-    {{ $styles := resources.Get "sass/stylesheet.scss" | toCSS $cssOpts }}
+    {{ $styles := resources.Get "sass/stylesheet.scss" | toCSS $cssOpts | postCSS }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     {{ else }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" ) }}
-    {{ $styles := resources.Get "sass/stylesheet.scss" | toCSS $cssOpts | minify | fingerprint }}
+    {{ $styles := resources.Get "sass/stylesheet.scss" | toCSS $cssOpts | postCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     {{ end }}
 

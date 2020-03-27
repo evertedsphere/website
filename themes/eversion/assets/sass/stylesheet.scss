@@ -1,39 +1,37 @@
-@import url('https://rsms.me/inter/inter.css');
-html { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
-}
-.text-gray-850 {
-  color: #242C3A;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.bg-gray-825 {
-  background-color: #283141;
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: "Inter", sans-serif;
 }
-.bg-gray-850 {
-  background-color: #242C3A;
-}
-.bg-gray-875 {
-  background-color: #1F2633;
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
 }
 
 a:hover {
-  text-decoration: underline;
+  @apply underline;
 }
 
 .actual-content {
   & p {
-    margin-bottom: 1rem;
+    @apply mb-1;
   }
-
+  & h1 {
+    @apply text-4xl;
+  }
   & h2 {
-    font-size: 2.25rem;
+    @apply text-3xl;
   }
   & h3 {
-    font-size: 1.875rem;
+    @apply text-2xl;
   }
   & h4 {
-    font-size: 2rem;
+    @apply text-xl;
   }
 }
 
@@ -102,5 +100,6 @@ a:hover {
   flex-grow: 1;
 }
 
-// todo compile ourselves!
-
+div.highlight {
+  @apply my-6 p-4 bg-gray-800 text-lg;
+}

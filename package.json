@@ -7,7 +7,15 @@
   "license": "CC-BY-NC-SA-4.0",
   "private": false,
   "dependencies": {
-    "tailwind-starter-kit": "https://github.com/creativetimofficial/tailwind-starter-kit",
-    "tailwindcss": "^1.2.0"
+    "autoprefixer": "^9.7.5",
+    "postcss-cli": "^7.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-purgecss": "^2.0.3",
+    "precss": "^4.0.0",
+    "purgecss": "^2.1.0",
+    "tailwindcss": "^1.2.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
