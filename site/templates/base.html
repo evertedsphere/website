@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{>site/templates/head.html}}
+  <body class="text-gray-400 antialiased viewport">
+    {{>site/templates/header.html}}
+    <section
+      class="
+        relative
+        block
+        bg-gray-800
+        leader-section
+        even-section
+        pt-2
+        sm:pt-2
+        md:pt-2
+        lg:pt-0
+        xl:pt-0
+        pb-10
+        sm:pb-16
+        md:pb-16
+        lg:pb-24
+        xl:pb-24
+      "
+    >
+      <div class="container mx-auto px-4">
+        <div
+          class="
+            flex flex-wrap
+            md:justify-around
+            lg:justify-around
+            xl:justify-around
+          "
+        >
+          <div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12">
+          {{{body}}}
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

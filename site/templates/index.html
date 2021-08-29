@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{>site/templates/head.html}}
+  <body class="text-gray-400 antialiased viewport">
+    {{>site/templates/header.html}}
+    <section
+      class="
+        relative
+        block
+        bg-gray-800
+        leader-section
+        even-section
+        px-4
+        pt-4
+        pb-6
+      "
+    >
+      <!-- pt-2 sm:pt-2 md:pt-2 lg:pt-0 xl:pt-0 pb-10 sm:pb-16 md:pb-16 lg:pb-24 xl:pb-24 -->
+      <div class="container mx-auto">
+        <div class="flex flex-wrap md:justify-around">
+          <div class="w-full md:w-7/12 text-gray-400">
+            <h1 class="text-4xl font-semibold pb-2">
+              はい、swannです。
+            </h1>
+            <p class="text-lg leading-relaxed">
+              i work as a functional programmer and enjoy thinking about
+              expressive type systems, programming language design, and the
+              development of compilers and theorem provers.
+            </p>
+            <p class="text-lg leading-relaxed">
+              you might know me by the handle @evertedsphere (or, previously,
+              @mrkgnao).
+            </p>
+          </div>
+          <div class="invisible md:visible md:w-5/12"></div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="
+        relative
+        block
+        bg-gray-900
+        post-leader-section
+        odd-section
+        fill-viewport
+        px-4
+        py-4
+      "
+    >
+      <!-- pt-5 sm:pt-0 md:pt-0 lg:pt-0 xl:pt-0 pb-5 sm:pt-0 md:pb-0 lg:pb-0 xl:pb-0 -->
+      <div class="container mx-auto">
+        <div class="flex flex-wrap md:justify-around">
+          <div class="w-full md:w-7/12 actual-content">
+            <header class="text-4xl font-semibold text-gray-400">
+              writing
+            </header>
+            <p class="text-lg leading-relaxed text-gray-500">
+              most of my longer-form writing appears on this website.
+            </p>
+            <header class="text-3xl font-semibold">recent articles</header>
+            <div class="metadata"></div>
+            {{>site/templates/post-list.html}}
+          </div>
+          <div class="invisible md:visible md:w-5/12"></div>
+        </div>
+      </div>
+    </section>
+    {{>site/templates/footer.html}}
+  </body>
+</html>

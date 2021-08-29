@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{>site/templates/head.html}}
+  <body class="text-gray-400 antialiased viewport">
+    {{>site/templates/header.html}}
+    <section
+      class="
+        relative
+        block
+        bg-gray-800
+        leader-section
+        even-section
+        px-4 pt-4 pb-6
+      "
+    >
+      <div class="container mx-auto">
+        <div
+          class="
+            flex flex-wrap
+            md:justify-around
+          "
+        >
+          <div class="w-full md:w-7/12">
+            <h1 id="title" class="text-4xl pb-2 font-semibold">
+              {{title}}
+            </h1>
+
+            <aside class="meta">
+              <div class="block">
+                <span class="italic mr-1 pr-1 semibold"> published </span>
+                <span class="mr-1 pr-1 font-semibold">{{date}}</span>
+              </div>
+              <div class="block">
+                <span class="mr-1 pr-1 italic semibold">tagged</span>
+                {{#tags}}
+                <a
+                  href="://0.0.0.0:8000/tags/{{tag}}"
+                  class="mr-1 pr-1 font-semibold"
+                  >{{.}}</a
+                >
+                {{/tags}}
+              </div>
+            </aside>
+          </div>
+          <div
+            class="
+              invisible
+              md:visible
+              md:w-5/12
+            "
+          >
+            <div class="block"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="
+        relative
+        block
+        bg-gray-900
+        post-leader-section
+        odd-section
+        fill-viewport
+        px-4 py-4
+      "
+    >
+      <div class="container mx-auto">
+        <div
+          class="
+            flex flex-wrap
+            md:justify-around
+          "
+        >
+          <div class="w-full md:w-7/12 actual-content">
+            <article id="content">{{{content}}}</article>
+          </div>
+          <div
+            class="
+              invisible
+              md:visible
+              md:w-5/12
+            "
+          >
+            Sidebar content.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{>site/templates/footer.html}}
+  </body>
+</html>
